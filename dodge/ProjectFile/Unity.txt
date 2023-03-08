@@ -1,0 +1,40 @@
+                        ☆ 유니티 관련 정리 ☆
+
+Debug.Log                   -> 유니티 콘솔에 문자열 출력
+Input.GetKey(KeyCode.□□□)   -> 키보드의 입력을 받아들임
+    Input.GetKey()      : 키를 누르는 동안 true 출력
+    Input.GetKeyDown()  : 키를 누르는 순간 true 출력
+    Input.GetKeyUp()    : 키를 누르다가 때는 순간 true 출력
+
+void SetActive(bool value)  -> 게임 오브젝트 활성화/비활성화
+    gameObject.SetActive(false);
+
+GetComponent<>()            -> 원하는 타입의 컴포넌트를 게임 오브젝트에서 찾아오는 메서드
+    playerRigidbody = GetComponent<Rigidbody>();
+        만약 해당 컴포넌트를 찾지 못했을 경우 Null을 반환.
+
+GetAxis()                   -> 축의 이름을 받으며 다음 경우에 따라 감지된 입력 값을 반환한다.
+    ○ 축의 음의 방향에 대응되는 버튼을 누름: -1.0
+    ○ 아무것도 누루지 않음: 0
+    ○ 축의 양의 방향에 대응되는 버튼을 누름: +1.0
+
+    축의 이름은 유니티 내부에서 Edit -> Project Settings -> Input Manager에서 확인 가능
+    기초적인 키 맵핑
+        ▽ Horizontal    (수평축)    -> 왼쪽 방향키, 오른쪽 방향키, a, d
+        ▽ Vertical      (수직축)    -> 위쪽 방향키, 아래쪽 방향키, w, s
+        ▽ Fire1                     -> 왼쪽 ctrl, 마우스 0번(우클릭)
+        ▽ Fire2                     -> 왼쪽 alt, 마우스 1번(좌클릭)
+        ▽ Fire3                     -> 왼쪽 shift, 마우스 2번(?)
+        ▽ Jump              (점프)  -> space
+        ▽ Mouse X                   -> 마우스 x축 이동
+        ▽ Mouse Y                   -> 마우스 y축 이동
+        ▽ Mouse ScrollWheel         -> 마우스 스크롤 휠
+        ▽ Submit                    -> return
+        ▽ Submit                    -> enter
+        ▽ Cancel         (취소)     -> escape
+
+Vector3 변수명 = new Vector()       -> 원소 x, y, z를 가지는 타입이며 주로 속도, 위치 등을 나타냄
+
+Destroy()   -> 입력한 오브젝트를 파괴하는 메서드
+    void Destroy(Object obj);           -> 해당 오브젝트를 즉시 파괴
+    void Destroy(Object obj, float t);  -> 해당 오브젝트를 t초 이후에 파괴
