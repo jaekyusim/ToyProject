@@ -38,3 +38,28 @@ Vector3 변수명 = new Vector()       -> 원소 x, y, z를 가지는 타입이�
 Destroy()   -> 입력한 오브젝트를 파괴하는 메서드
     void Destroy(Object obj);           -> 해당 오브젝트를 즉시 파괴
     void Destroy(Object obj, float t);  -> 해당 오브젝트를 t초 이후에 파괴
+
+▷ 충돌 이벤트 메서드 ◁
+    OnCollisionEnter()        -> 일반 충돌
+        
+        일반적인 콜라이더를 가진 두 게임 오브젝트가 충돌할 때 자동으로 실행
+        충돌한 두 콜라이더는 서로 통과하지 않고 밀어냄
+
+        OnCollisionEnter(Collision collision)   : 충돌한 순간
+        OnCollisionStay(Collision collision)    : 충돌하는 동안
+        OnCollisionExit(Collision collision)    : 충돌했다가 분리되는 순간
+
+    OnTriggerEnter()      -> 트리거 충돌
+
+        충돌한 두 게임 오브젝트의 콜라이더 중 최소 하나가 트리거 콜라이더라면 자동으로 실행
+        두 게임 오브젝트가 충돌했을 떄 서로 그대로 통과
+
+        OnTriggerEnter(Collider other)          : 충돌한 순간
+        OnTriggerStay(Collider other)           : 충돌하는 동안
+        OnTriggerExit(Collider other)           : 충돌했다가 분리되는 순간
+
+Random.Range()           -> 최댓값과 최솟값을 순서대로 받고 그 사이의 랜덤한 숫자를 출력하는 메서드
+    Random.Range(0, 3)          : 0부터 3 사이의 숫자(0<= Range < 3), 0, 1, 2 출력
+    Random.Range(0.0f, 3.0f)    : 0f부터 3f 사이의 float 값 출력, 0.4, 0.8 등
+
+FindObjectOfType<>()     -> <>에 명시된 타입을 Scene에 있는 모든 오브젝트를 검색해 해당 타입의 오브젝트를 가져옴
